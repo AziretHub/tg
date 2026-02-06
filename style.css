@@ -1,0 +1,60 @@
+body{
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    background-color: black;
+}
+.header{
+    display: flex;
+    flex-direction: column;    
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.headerText{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 90px;
+}
+.headerText h1{
+    margin: 0;
+    color: white;
+}
+.headerButton{
+    display: flex;
+    gap: 35px;
+}
+.headerButtonYes{
+    /* background-color: aquamarine; */
+    border: none;
+    border-radius: 10px;
+    width: 165px;
+    height: 60px;
+     color: blue;
+     font-size: 24px;
+     font-weight: 700;
+
+}
+.headerButtonNo{
+    background-color:rgb(210, 0, 0);
+    border: none;
+    border-radius: 10px;
+    width: 165px;
+    height: 60px;
+     color: blue;
+     font-size: 24px;
+     font-weight: 700;
+
+}
+.louse{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    gap: 25px;
+
+}

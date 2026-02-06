@@ -4,17 +4,17 @@ const tgBotApi = '7845228825:AAGHu-y1on7AfOpvQJlPDTWSldBuQrKQE6k'
 
 const bot = new TelegramBot(tgBotApi, {polling:true})
 
-bot.on('message', (msg)=>{
-    const  userid = msg.chat.id
-    console.log(userid);
-    bot.sendMessage(userid, 'rfy')
-      if (msg.location) {
-    console.log(msg.location.latitude, msg.location.longitude);
-  }else{
-    console.log('no location');
+// bot.on('message', (msg)=>{
+//     const  userid = msg.chat.id
+//     console.log(userid);
+//     bot.sendMessage(userid, 'rfy')
+//       if (msg.location) {
+//     console.log(msg.location.latitude, msg.location.longitude);
+//   }else{
+//     console.log('no location');
     
-  }
-})
+//   }
+// })
 
 // const restartBot = bot.onText(/\/restart/, (msg) => {
 //   const chatId = msg.chat.id;
