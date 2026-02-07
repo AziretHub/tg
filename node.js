@@ -1,9 +1,34 @@
+const express = require("express");
 const TelegramBot = require("node-telegram-bot-api");
 
-const tgBotApi = '7845228825:AAGHu-y1on7AfOpvQJlPDTWSldBuQrKQE6k'
+const app = express();
+app.use(express.json());
 
-const bot = new TelegramBot(tgBotApi, {polling:true})
+const TOKEN = '7845228825:AAGHu-y1on7AfOpvQJlPDTWSldBuQrKQE6k';
+const CHAT_ID = "5335499274";
 
+const bot = new TelegramBot(TOKEN, { polling: true });
+
+app.post("/location", (req, res) => {
+  const { lat, lon } = req.body;
+
+  console.log("Координаты:", lat, lon);
+
+  bot.sendMessage(
+    CHAT_ID,
+    `📍 Новая геолокация:\nШирота: ${lat}\nДолгота: ${lon}`
+  );
+
+  res.sendStatus(200);
+});
+
+app.listen(3000, () => {
+  console.log("Server started on 3000");
+});
+
+
+
+////////////5335499274
 // bot.on('message', (msg)=>{
 //     const  userid = msg.chat.id
 //     console.log(userid);
