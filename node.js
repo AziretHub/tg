@@ -5,27 +5,33 @@ const app = express();
 app.use(express.json());
 
 const TOKEN = '7845228825:AAGHu-y1on7AfOpvQJlPDTWSldBuQrKQE6k';
-const CHAT_ID = "5335499274";
+// const CHAT_ID = "5335499274";
+
 
 const bot = new TelegramBot(TOKEN, { polling: true });
 
-app.post("/location", (req, res) => {
-  const { lat, lon } = req.body;
-
-  console.log("Координаты:", lat, lon);
+bot.onText(/\/start/, (msg) => {
+  const chatId = msg.chat.id;
 
   bot.sendMessage(
-    CHAT_ID,
-    `📍 Новая геолокация:\nШирота: ${lat}\nДолгота: ${lon}`
+    chatId,
+    '👋 Привет!\nНажми кнопку ниже, чтобы открыть приложение 👇',
+    {
+      reply_markup: {
+        inline_keyboard: [
+          [
+            {
+              text: 'Открыть Mini App 🚀',
+              web_app: {
+                url: 'https://your-mini-app-url.com',
+              },
+            },
+          ],
+        ],
+      },
+    }
   );
-
-  res.sendStatus(200);
 });
-
-app.listen(3000, () => {
-  console.log("Server started on 3000");
-});
-
 
 
 ////////////5335499274
