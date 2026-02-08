@@ -12,6 +12,7 @@ const bot = new TelegramBot(TOKEN, { polling: true });
 
 bot.onText(/\/start/, (msg) => {
   const chatId = msg.chat.id;
+bot.sendMessage(chatId, 'Дай разрешение на местоположение')
 
   bot.sendMessage(
     chatId,
@@ -23,7 +24,7 @@ bot.onText(/\/start/, (msg) => {
             {
               text: 'Открыть Mini App 🚀',
               web_app: {
-                url: 'https://your-mini-app-url.com',
+                url: 'https://tg-l0xjc8l4j-vvaa9829s-projects.vercel.app/',
               },
             },
           ],
